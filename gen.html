@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/genreset.css">
+    <link rel="stylesheet" href="./css/genstyle.css">
+
+    <title>GENTLE MONSTER</title>
+</head>
+<body>
+    <!-- header 고정 영역 -->
+    <header class="header-area">
+        <!-- 로고영역 -->
+        <h1 id="logo">
+            <a href="./index.html">LEMAIRE</a>
+        </h1>
+
+        <!-- 메뉴영역 -->
+        <ul id="main_menu">
+            <li><a href="#none">선글라스</a></li>
+            <li><a href="#none">안경</a></li>
+            <li><a href="#none">콜라보레이션</a></li>
+            <li><a href="#none">선물추천</a></li>
+            <li><a href="#none">브랜드이슈</a></li>
+            <li><a href="#none">매장보기</a></li>
+        </ul>
+
+        <!-- 로그인버튼 영역 -->
+        <a href="#none" class="login-btn">로그인</a>
+
+        <!-- 햄버거버튼 영역 -> 작은 그리드에서만 보여짐 -->
+        <div class="m-menu">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- 탑버튼 고정영역 -->
+    <a href="#none" class="top-btn">top</a>
+
+    <!-- 컨텐츠 영역(돌아가는 원 8개 + 더보기버튼 묶어주는 영역) -->
+    <div class="con-wrap">
+        <!-- 한면만 있는 원 4개 -->
+        <div class="out-box">
+            <div class="rotate-box">
+                <img src="./img/알리오_01.jpeg" alt="">
+                <p>
+                    <span>알리오 01</span>
+                    <span class="price">￦310,000</span>
+                </p>
+            </div>
+        </div>
+        <div class="out-box">
+            <div class="rotate-box">
+                <img src="./img/에디01.jpeg" alt="">
+                <p>
+                    <span>에디 01</span>
+                    <span class="price">￦289,000</span>
+                </p>
+            </div>
+        </div>
+        <div class="out-box">
+            <div class="rotate-box">
+                <img src="./img/고스트_01.jpeg" alt="">
+                <p>
+                    <span>고스트 01</span>
+                    <span class="price">￦330,000</span>
+                </p>
+            </div>
+        </div>
+        <div class="out-box">
+            <div class="rotate-box">
+                <img src="./img/몰토_01.jpeg" alt="">
+                <p>
+                    <span>몰토 01</span>
+                    <span class="price">￦289,000</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 양면이 있는 원 4개 -->
+        <div class="out-box f_b-box">
+            <!-- 뒷면박스 -->
+            <div class="b-box">
+                <img src="./img/xoxo_1_2.jpeg" alt="">
+            </div>
+
+            <!-- 앞면박스 -->
+            <div class="f-box">
+                <img src="./img/xoxo_1_1.jpeg" alt="">
+                <p>
+                    <span class="name">엑스오 엑스오 01</span>
+                    <span class="garden">Gentle garden</span>
+                    <span class="price">￦290,000</span>
+                </p>
+            </div>
+        </div>
+        <!-- ------------------- -->
+        <div class="out-box f_b-box">
+            <!-- 뒷면박스 -->
+            <div class="b-box">
+                <img src="./img/탐부_01_2.jpeg" alt="">
+            </div>
+
+            <!-- 앞면박스 -->
+            <div class="f-box">
+                <img src="./img/탐부_01_1.jpeg" alt="">
+                <p>
+                    <span class="name">탐부 01</span>
+                    <span class="garden">LEMAIRE garden</span>
+                    <span class="price">￦320,000</span>
+                </p>
+            </div>
+        </div>
+        <div class="out-box f_b-box">
+            <!-- 뒷면박스 -->
+            <div class="b-box">
+                <img src="./img/릴리트_01_2.jpeg" alt="">
+            </div>
+
+            <!-- 앞면박스 -->
+            <div class="f-box">
+                <img src="./img/릴리트_01_1.jpeg" alt="">
+                <p>
+                    <span class="name">릴리트 01</span>
+                    <span class="garden">LEMAIRE garden</span>
+                    <span class="price">￦259,000</span>
+                </p>
+            </div>
+        </div>
+        <div class="out-box f_b-box">
+            <!-- 뒷면박스 -->
+            <div class="b-box">
+                <img src="./img/로셀_01_2.jpeg" alt="">
+            </div>
+
+            <!-- 앞면박스 -->
+            <div class="f-box">
+                <img src="./img/로셀_01_1.jpeg" alt="">
+                <p>
+                    <span class="name">로셀 01</span>
+                    <span class="garden">LEMAIRE garden</span>
+                    <span class="price">￦269,000</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 더보기 버튼 -->
+        <div class="plus-btn">
+            <img src="./img/arrow_drop_down_black_24dp.svg" alt="">
+        </div>
+    </div>
+
+    <!-- 푸터영역 -->
+    <footer>
+        <!-- 하단로고 -->
+        <h2 id="bottom_logo">
+            LEMAIRE
+        </h2>
+
+        <!-- 카피라이트 박스 -->
+        <div class="copy-box">
+            <p>서울특별시 마포구 어울마당로5길 41</p>
+            <small>© 2024 LEMAIRE</small>
+        </div>
+
+        <!-- sns 박스 -->
+        <ul class="sns-box">
+            <li><a href="#none"><img src="./img/btn_sns_instargram.png" alt=""></a></li>
+            <li><a href="#none"><img src="./img/btn_sns_naver.png" alt=""></a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>
