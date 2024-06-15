@@ -1,0 +1,411 @@
+/* ***모바일 사이즈에서 보여지는 햄버거버튼 pc에서 보이지 않더라고 꼭 제거시켜주기 */
+.m-menu {
+    display: none;
+}
+
+/* 고정영역 스타일링 */
+/* 헤더,탑버튼 영역 */
+/* 헤더 상단에 고정시키고 높이 100px 배경 흰색으로 설정 패딩 상하 20 좌우 40으로 설정해주기 / 메뉴들 사이여백 20px / 로고 사이즈 너비 225px 높이 22px */
+.header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
+
+    width: 100%;
+    height: 100px;
+    padding: 20px 40px;
+}
+
+#logo {
+    display: flex;
+    /* 자식이 부모의 크기값을 잘 잡지 못할 경우 부모에게 flex 처리해주면 딱 맞아떨어짐 */
+    width: 225px;
+    height: 22px;
+}
+
+/* 메뉴 영역 */
+#main_menu {
+    display: flex;
+
+    /* 메인메뉴는 브라우저 기준 가운데 정렬이므로 position 속성 사용해서 가운데 정렬해줘야함 */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#main_menu li a {
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 20px;
+    white-space: nowrap;
+    /* 텍스트 줄바꿈 막아주기 */
+}
+
+/* a태그 마지막 아이는 오른쪽 여백 빼주세요 */
+#main_menu li:last-child a {
+    margin-right: 0;
+}
+
+/* 로그인버튼 영역 상하 5px 좌우 10px 패딩 #707070색상의 1px 실선 배경컬러는 투명하게 설정한 버튼 만들어주기 */
+.login-btn {
+    display: flex;
+    padding: 5px 10px;
+    border: 1px solid #707070;
+    font-size: 14px;
+}
+
+/* ----------------------------------------------------- */
+/* 탑버튼(상단이동버튼) : 너비 높이 40px / 오른쪽하단에서부터 50px 위치고정 / 폰트사이즈 12px / 원형으로 / 텍스트 원형 가운데 정렬  / 실선 1px #666 / 대문자로 설정 */
+.top-btn {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 999;
+    font-size: 12px;
+    border-radius: 50%;
+    border: 1px solid #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+/* ----------------------------------------------------- */
+/* con-wrap 영역 */
+/* 유동값 계산 (% : 부모기준으로 계산, vw : 기기기준으로 계산) */
+/* 유동값 계산식 : 객체의 너비 / 기준값 = 비율값 * 100 */
+/* 저는 con-wrap 박스를 1920 (기기값)기준으로 1248 만큼 너비를 잡게 반응형에서도 유지시키고싶어요 */
+/* 어떻게하죠? */
+.con-wrap {
+    /* 1248 / 1920 = 0.65 * 100 = 65vw */
+    width: 65vw;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 부모기준으로 계산 : 부모크기는 자식입장에서 단위값에 상관없이 항상 100% */
+.out-box {
+    margin-right: 1%;
+    margin-bottom: 1%;
+
+    /* 100 - 3 = 97 / 4 = 24.25% */
+    width: 24.25%;
+    height: 0;
+    padding-bottom: 24.25%;
+    /* 정원형을 만들기 위해서 너비값과 높이값이 동일해야함 */
+    /* 그러나 너비값이 유동값으로 계산되어 높이값으로 % 단위를 넣어주면 기준이 없기때문에 불가능 */
+    /* 따라서 유동값으로 높이값을 넣을때는 padding-bottom 사용해서 적용하면됨(이때 img 태그로 이미지를 출력했을경우 height: 0;처리 필수) */
+
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.out-box:nth-child(4n) {
+    margin-right: 0;
+}
+
+/* 면이 하나인 박스와 두개인 박스 모두 선택해서 absolute 지정 */
+.out-box div {
+    /* rotate-box,b-box,f-box 다잡아준 것 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.out-box p {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.out-box span {
+    display: block;
+    font-size: 16px;
+
+    /* 텍스트 점처리해보기 */
+    width: 50%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.out-box .garden {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(255, 170, 0);
+}
+
+.out-box .price {
+    font-size: 20px;
+    font-weight: 400;
+    color: green;
+}
+
+/* 더보기버튼 */
+.plus-btn {
+    /* 상단여백 40px / con-wrap 기준 가운데 정렬 */
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.plus-btn img {
+    /* 너비 높이 44px 실선 1px #999 / 원형으로 설정*/
+    width: 44px;
+    height: 44px;
+    border: 1px solid #999;
+    border-radius: 50%;
+}
+
+/* ----------------------------------------------------- */
+footer {
+    margin: 100px 0 50px;
+}
+
+#bottom_logo {
+    width: 150px;
+    height: 14px;
+    display: flex;
+    margin: 0 auto;
+    padding-left: 25px;
+}
+
+.copy-box {
+    font-size: 12px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* sns 박스영역 */
+.sns-box {
+    display: flex;
+    justify-content: center;
+}
+
+.sns-box li {
+    width: 26px;
+    height: 26px;
+    margin: 0 10px;
+}
+
+.sns-box li a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------------------------------------------------- */
+/* 동전돌리기 호버 애니메이션 진행해보기 */
+
+/* 원점값 적어주기 */
+.rotate-box {
+    transform: rotate(0);
+}
+
+/* 호버했을때 값 적어주기 */
+.out-box:hover .rotate-box {
+    transform: rotateY(180deg);
+}
+
+
+/* 양면박스 원점값 적어주기 */
+.f-box {
+    transform: rotateY(0);
+    opacity: 1;
+}
+
+.b-box {
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+
+.f_b-box:hover .f-box {
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+
+.f_b-box:hover .b-box {
+    transform: rotateY(0);
+    opacity: 1;
+}
+
+.out-box div {
+    transition-duration: 0.3s;
+
+    border-radius: 50%;
+    overflow: hidden;
+    /* .out-box 객체에게 원형으로 변경되는 속성을 걸어줬지만 안쪽에 있는 div 박스들은 원형으로 변경되지 않아 뒤집히는 느낌이 어색함 -> 안쪽에 있는 div 객체도 원형으로 만들어줌 */
+}
+
+/* ----------------------------------------------------- */
+/* 반응형 미디어쿼리 시작 */
+@media (max-width: 1439px) {
+    /* 개인적으로 그리드를 봐가면서 그리드가 너무 작다고 판단되거나 여백이 너무 많아진다고 생각되거나 혹은 객체가 안보인다거나 할때 px값으로 잡혀있다면 확인하고 수정 */
+    /* 스타일시트 하나로 작성 시 덮어쓰는 개념이기때문에 위에서 작성한 클래스명 되도록 그대로 사용할것! 스타일 적용한 객체에 그대로 덮어쓰기할것! */
+
+    #main_menu,
+    .login-btn {
+        display: none;
+    }
+
+    .m-menu {
+        display: block;
+        width: 25px;
+        height: 15px;
+        /* background-color: lightblue; */
+        cursor: pointer;
+        position: relative;
+    }
+
+    .m-menu span {
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        border-radius: 2px;
+    }
+
+    .m-menu span:nth-child(1) {
+        top: 0;
+    }
+
+    .m-menu span:nth-child(2) {
+        top: 50%;
+    }
+
+    .m-menu span:nth-child(3) {
+        top: 100%;
+    }
+
+    .out-box {
+        margin-right: 0.5%;
+        margin-bottom: 0.5%;
+        /* 객체 3개씩 정렬되도록 너비값 계산해서 출력해보기!(3개씩 정렬까지) */
+        /* 100 - 1 = 99 / 3 = 33% */
+        width: 33%;
+        padding-bottom: 33%;
+    }
+
+    .out-box:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .out-box:nth-child(4n) {
+        margin-right: 0.5%;
+    }
+}
+
+/* -------------------------------------- */
+/* 1100px까지는 로고 너비 180px 높이 18px / .con-wrap 화면너비 1100px 기준 990px로 유동값 계산해서 넣어보기 */
+@media (max-width: 1100px) {
+    #logo {
+        width: 180px;
+        height: 18px;
+    }
+
+    .con-wrap {
+        /* (990 / 1100) * 100 = 90vw */
+        width: 90vw;
+    }
+}
+
+/* ------------------------------------------ */
+@media (max-width: 960px) {
+    .con-wrap {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        /* 모바일 사이즈에서 양쪽 내부여백을 최소 16px 최대 32px 까지 잡아주고 너비값은 자연스럽게 줄도록 100% 처리하는 것이 이상적임 */
+    }
+
+    /* 과제 : .out-box 오른쪽,하단 마진 1% / 객체 한줄에 2개씩 출력되도록 너비 높이 설정해보기 */
+    .out-box {
+        margin-right: 1%;
+        margin-bottom: 1%;
+        /* 100 - 1 = 99 / 2 = 49.5 */
+        width: 49.5%;
+        padding-bottom: 49.5%;
+    }
+
+    .out-box:nth-child(even) {
+        margin-right: 0;
+    }
+
+    .out-box:nth-child(odd) {
+        margin-right: 1%;
+    }
+
+    .out-box span {
+        font-size: 24px;
+    }
+
+    .out-box .garden {
+        font-size: 18px;
+    }
+
+    .out-box .price {
+        font-size: 30px;
+    }
+}
+
+/* 미디어 쿼리 759px 까지 .out-box 객체 하나씩(너비 부모박스만큼 전체) 보이도록 설정 오른쪽 마진 없애고 하단 마진 3%로 설정해주세요 */
+@media (max-width: 759px) {
+    .out-box {
+        margin-right: 0 !important;
+        /* !important 는 css 우선적용순위와 상관없이 전부 덮어써서 우선적용시킴 -> 플러그인 사용시에 자주 적용 */
+        width: 100%;
+        padding-bottom: 100%;
+        margin-bottom: 3%;
+    }
+
+    .out-box span {
+        font-size: 32px;
+    }
+
+    .out-box .price {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-area {
+        height: auto;
+        padding: 16px;
+        /* height 값을 반응형으로 원상복구 시킬때는 자식의 높이값을 자연스럽게 잡을 수 있도록 height: 0;이 아니라 auto로 처리해야함  */
+    }
+
+    .con-wrap {
+        margin: 60px 0;
+    }
+
+    .out-box span {
+        font-size: 20px;
+    }
+
+    .out-box .price {
+        font-size: 24px;
+    }
+
+    .top-btn {
+        right: 16px;
+        bottom: 16px;
+    }
+}
